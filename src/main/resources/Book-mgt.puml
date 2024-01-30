@@ -9,8 +9,8 @@ BookDetailService -> BookDetailRepository: Invoke repository layer
 BookDetailRepository -> H2DB: Perform crud operation on H2 data base.
 
 
-H2DB <- BookDetailRepository: Return the data from Data base
-BookDetailRepository <- BookDetailService: Repository layer send data to service layer
-BookDetailService <- BookDetailController: Service layer send data to controller
-BookDetailController <- Postman: Response return to Postman
+H2DB -> BookDetailRepository: Return the data from Data base
+BookDetailRepository -> BookDetailService: Repository layer send data to service layer
+BookDetailService -> BookDetailController: Service layer send data to controller
+BookDetailController -> Postman: Response return to Postman
 @enduml
